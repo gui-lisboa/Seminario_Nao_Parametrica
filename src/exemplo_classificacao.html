@@ -755,17 +755,488 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
-<span class="n">caracteristicas</span> <span class="o">=</span> <span class="n">modelo</span><span class="o">.</span><span class="n">feature_importances_</span>
-<span class="n">std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">([</span><span class="n">arvore</span><span class="o">.</span><span class="n">feature_importances_</span> <span class="k">for</span> <span class="n">arvore</span> <span class="ow">in</span> <span class="n">modelo</span><span class="o">.</span><span class="n">estimators_</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">]})</span>
 
-<span class="n">importancias</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">caracteristicas</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">modelo</span><span class="o">.</span><span class="n">feature_names_in_</span><span class="p">)</span>
-<span class="n">importancias</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">yerr</span><span class="o">=</span><span class="n">std</span><span class="p">);</span>
+<span class="n">desvio_padrao_estimadores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">arvore</span><span class="o">.</span><span class="n">feature_importances_</span> <span class="k">for</span> <span class="n">arvore</span> <span class="ow">in</span> <span class="n">modelo</span><span class="o">.</span><span class="n">estimators_</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">importancias</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">,</span>
+                         <span class="n">index</span><span class="o">=</span><span class="n">modelo</span><span class="o">.</span><span class="n">feature_names_in_</span><span class="p">)</span>
+<span class="n">importancias</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">yerr</span><span class="o">=</span><span class="n">desvio_padrao_estimadores</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/exemplo_classificacao_7_0.png" src="../_images/exemplo_classificacao_7_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
+
+<span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">estimators_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+               <span class="n">feature_names</span><span class="o">=</span><span class="n">modelo</span><span class="o">.</span><span class="n">feature_names_in_</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+               <span class="n">class_names</span><span class="o">=</span><span class="s1">&#39;Adaptivity Level&#39;</span><span class="p">,</span>
+               <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/exemplo_classificacao_8_0.png" src="../_images/exemplo_classificacao_8_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">export_text</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">estimators_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                         <span class="n">feature_names</span><span class="o">=</span><span class="n">modelo</span><span class="o">.</span><span class="n">feature_names_in_</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- Network Type &lt;= 1.50
+|   |--- Self Lms &lt;= 0.50
+|   |   |--- Class Duration &lt;= 0.50
+|   |   |   |--- class: 1.0
+|   |   |--- Class Duration &gt;  0.50
+|   |   |   |--- Network Type &lt;= 0.50
+|   |   |   |   |--- Institution Type &lt;= 0.50
+|   |   |   |   |   |--- class: 1.0
+|   |   |   |   |--- Institution Type &gt;  0.50
+|   |   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |   |--- class: 2.0
+|   |   |   |--- Network Type &gt;  0.50
+|   |   |   |   |--- Age &lt;= 2.50
+|   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |--- Age &lt;= 1.50
+|   |   |   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- Financial Condition &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |--- Financial Condition &gt;  1.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |--- Age &gt;  1.50
+|   |   |   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- Institution Type &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Institution Type &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- Institution Type &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |--- Institution Type &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |--- Institution Type &lt;= 0.50
+|   |   |   |   |   |   |   |--- Education Level &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Education Level &gt;  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Institution Type &gt;  0.50
+|   |   |   |   |   |   |   |--- Financial Condition &lt;= 1.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Financial Condition &gt;  1.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |--- Age &gt;  2.50
+|   |   |   |   |   |--- Institution Type &lt;= 0.50
+|   |   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- Institution Type &gt;  0.50
+|   |   |   |   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Device &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Device &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |--- Self Lms &gt;  0.50
+|   |   |--- Class Duration &lt;= 0.50
+|   |   |   |--- class: 1.0
+|   |   |--- Class Duration &gt;  0.50
+|   |   |   |--- Device &lt;= 1.50
+|   |   |   |   |--- Load-shedding &lt;= 0.50
+|   |   |   |   |   |--- Institution Type &lt;= 0.50
+|   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- Institution Type &gt;  0.50
+|   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |--- Device &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Device &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |   |--- Age &lt;= 2.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |   |--- Age &gt;  2.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |--- Load-shedding &gt;  0.50
+|   |   |   |   |   |--- Device &lt;= 0.50
+|   |   |   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- Device &gt;  0.50
+|   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- Age &lt;= 2.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |--- Age &gt;  2.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- Education Level &lt;= 1.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Education Level &gt;  1.00
+|   |   |   |   |   |   |   |   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |   |   |   |--- Education Level &lt;= 1.00
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |--- Education Level &gt;  1.00
+|   |   |   |   |   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |--- Education Level &lt;= 1.00
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Education Level &gt;  1.00
+|   |   |   |   |   |   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- Age &lt;= 3.50
+|   |   |   |   |   |   |   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Age &gt;  3.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |--- Device &gt;  1.50
+|   |   |   |   |--- class: 1.0
+|--- Network Type &gt;  1.50
+|   |--- Education Level &lt;= 1.50
+|   |   |--- Location &lt;= 0.50
+|   |   |   |--- Load-shedding &lt;= 0.50
+|   |   |   |   |--- Institution Type &lt;= 0.50
+|   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |--- Class Duration &lt;= 0.50
+|   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Class Duration &gt;  0.50
+|   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |--- Institution Type &gt;  0.50
+|   |   |   |   |   |--- class: 2.0
+|   |   |   |--- Load-shedding &gt;  0.50
+|   |   |   |   |--- Class Duration &lt;= 0.50
+|   |   |   |   |   |--- class: 1.0
+|   |   |   |   |--- Class Duration &gt;  0.50
+|   |   |   |   |   |--- Institution Type &lt;= 0.50
+|   |   |   |   |   |   |--- Financial Condition &lt;= 1.00
+|   |   |   |   |   |   |   |--- Education Level &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Education Level &gt;  0.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |--- Financial Condition &gt;  1.00
+|   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |--- Institution Type &gt;  0.50
+|   |   |   |   |   |   |--- class: 1.0
+|   |   |--- Location &gt;  0.50
+|   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |--- Class Duration &lt;= 0.50
+|   |   |   |   |   |--- class: 1.0
+|   |   |   |   |--- Class Duration &gt;  0.50
+|   |   |   |   |   |--- Self Lms &lt;= 0.50
+|   |   |   |   |   |   |--- Institution Type &lt;= 0.50
+|   |   |   |   |   |   |   |--- Age &lt;= 1.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Age &gt;  1.50
+|   |   |   |   |   |   |   |   |--- Load-shedding &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Load-shedding &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- Age &lt;= 2.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |   |--- Age &gt;  2.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |--- Institution Type &gt;  0.50
+|   |   |   |   |   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |--- Financial Condition &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |   |--- Age &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- Age &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Financial Condition &gt;  1.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |--- Self Lms &gt;  0.50
+|   |   |   |   |   |   |--- class: 1.0
+|   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |--- Institution Type &lt;= 0.50
+|   |   |   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |   |   |--- Financial Condition &lt;= 1.00
+|   |   |   |   |   |   |   |--- Load-shedding &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Load-shedding &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Education Level &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Education Level &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- Age &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |   |--- Device &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |   |--- Device &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |   |   |--- Age &gt;  1.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |--- Financial Condition &gt;  1.00
+|   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |--- Institution Type &gt;  0.50
+|   |   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |   |--- Education Level &lt;= 0.50
+|   |   |   |   |   |   |   |--- Load-shedding &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Load-shedding &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Device &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Device &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Education Level &gt;  0.50
+|   |   |   |   |   |   |   |--- Financial Condition &lt;= 1.50
+|   |   |   |   |   |   |   |   |--- Age &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |--- Class Duration &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |--- Class Duration &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- Load-shedding &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- Load-shedding &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |--- Age &gt;  1.50
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Financial Condition &gt;  1.50
+|   |   |   |   |   |   |   |   |--- Age &lt;= 3.00
+|   |   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |   |--- Age &gt;  3.00
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |   |--- Financial Condition &lt;= 1.00
+|   |   |   |   |   |   |   |--- Device &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Device &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Load-shedding &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Load-shedding &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- Financial Condition &gt;  1.00
+|   |   |   |   |   |   |   |--- class: 0.0
+|   |--- Education Level &gt;  1.50
+|   |   |--- Device &lt;= 0.50
+|   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |--- Age &lt;= 3.50
+|   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- Self Lms &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Self Lms &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- Institution Type &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |--- Institution Type &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Self Lms &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |--- Self Lms &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- Load-shedding &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |--- Load-shedding &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- Age &lt;= 2.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |   |--- Age &gt;  2.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- Age &gt;  3.50
+|   |   |   |   |   |--- Institution Type &lt;= 0.50
+|   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- Institution Type &gt;  0.50
+|   |   |   |   |   |   |--- class: 2.0
+|   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |--- Self Lms &lt;= 0.50
+|   |   |   |   |   |--- Class Duration &lt;= 0.50
+|   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- Class Duration &gt;  0.50
+|   |   |   |   |   |   |--- Age &lt;= 3.50
+|   |   |   |   |   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- Age &gt;  3.50
+|   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |--- Self Lms &gt;  0.50
+|   |   |   |   |   |--- class: 0.0
+|   |   |--- Device &gt;  0.50
+|   |   |   |--- Institution Type &lt;= 0.50
+|   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- Class Duration &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Class Duration &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- Age &lt;= 3.50
+|   |   |   |   |   |   |   |   |   |   |--- Load-shedding &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |   |--- Load-shedding &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Age &gt;  3.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- Age &lt;= 3.00
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Age &gt;  3.00
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- Class Duration &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |--- Class Duration &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- Self Lms &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |--- Self Lms &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |--- Age &lt;= 3.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Age &gt;  3.50
+|   |   |   |   |   |   |   |   |--- Financial Condition &lt;= 1.00
+|   |   |   |   |   |   |   |   |   |--- Class Duration &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |--- Class Duration &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |--- Financial Condition &gt;  1.00
+|   |   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |--- class: 2.0
+|   |   |   |--- Institution Type &gt;  0.50
+|   |   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |--- Class Duration &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Class Duration &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Load-shedding &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Load-shedding &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |--- Age &lt;= 3.50
+|   |   |   |   |   |   |   |   |--- Class Duration &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Class Duration &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Age &gt;  3.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |--- Load-shedding &lt;= 0.50
+|   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Load-shedding &gt;  0.50
+|   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |   |--- Financial Condition &lt;= 1.00
+|   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |--- Load-shedding &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Load-shedding &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Self Lms &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |--- Self Lms &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |--- Financial Condition &gt;  1.00
+|   |   |   |   |   |   |--- class: 1.0
+</pre></div>
+</div>
 </div>
 </div>
 </div>
