@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Random Forest &#8212; Seminário - Random Forest</title>
+    <title>Imputação de dados &#8212; Seminário - Random Forest</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,12 +52,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Pesquisar" href="../search.html" />
-    <link rel="next" title="Imputação de dados" href="imputacao_de_dados.html" />
-    <link rel="prev" title="Árvores de Decisão" href="arvores_de_decisao.html" />
+    <link rel="next" title="Classificação" href="exemplo_classificacao.html" />
+    <link rel="prev" title="Random Forest" href="random_forest.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="pt">
     
@@ -100,13 +98,13 @@ const thebe_selector_output = ".output, .cell_output"
    Árvores de Decisão
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="random_forest.html">
    Random Forest
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="imputacao_de_dados.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Imputação de dados
   </a>
  </li>
@@ -166,7 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/src/random_forest.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/src/imputacao_de_dados.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Baixar arquivo fonte" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -197,28 +195,13 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#descricao">
-   Descrição
+  <a class="reference internal nav-link" href="#dados-para-treinamento-incompletos">
+   Dados para treinamento incompletos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#criacao-da-floresta">
-   Criação da floresta
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#julgamento-e-decisao">
-   Julgamento e decisão
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#acuracia-na-predicao-e-oob">
-   Acurácia na predição e OOB
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#referencias">
-   Referências
+  <a class="reference internal nav-link" href="#dados-de-classificacao-incompletos">
+   Dados de classificação incompletos
   </a>
  </li>
 </ul>
@@ -231,7 +214,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Random Forest</h1>
+                <h1>Imputação de dados</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -242,28 +225,13 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#descricao">
-   Descrição
+  <a class="reference internal nav-link" href="#dados-para-treinamento-incompletos">
+   Dados para treinamento incompletos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#criacao-da-floresta">
-   Criação da floresta
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#julgamento-e-decisao">
-   Julgamento e decisão
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#acuracia-na-predicao-e-oob">
-   Acurácia na predição e OOB
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#referencias">
-   Referências
+  <a class="reference internal nav-link" href="#dados-de-classificacao-incompletos">
+   Dados de classificação incompletos
   </a>
  </li>
 </ul>
@@ -275,39 +243,37 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="random-forest">
-<h1>Random Forest<a class="headerlink" href="#random-forest" title="Link permanente para este título">¶</a></h1>
-<div class="section" id="descricao">
-<h2>Descrição<a class="headerlink" href="#descricao" title="Link permanente para este título">¶</a></h2>
-<p>Essencialmente Random Forests são constituidas de um grande conjunto de árvores de decisões. Os conceitos são similares, porém a aplicabilidade, flexibilidade e precisão são diferentes. A motivação por trás do uso do Random Forest está no fato de as árvores de decisão sofrerem com uma elevada variância. Como estabelecem James, Witten, Hastie e Tibshirani (2017), para o caso de separação em amostra de treinamento e teste, as árvores de decisão tendem a ter resultados muito diferentes em termos de desempenho em cada uma das amostras, sendo alguns de seus benefícios a simplicidade de interpretação e análise.</p>
-<p>O Random Forest é pensado para solucionar tal problema, combinando a simplicidade das árvores de decisão com uma flexibilidade advinda da utilização de uma série de árvores de decisão não correlacionadas e construídas à partir de conjuntos simulados de dados extraídos do conjunto original denominados «bootstrap».</p>
-<p>Um conjunto bootstrap é um amostra (ou conjunto de dados) advinda dos dados originais que poderá ser do mesmo tamanho que dos dados originais e que poderá, inclusive, ter linhas repetidas. Desta forma, a seleção para compor a amostra bootstrap é aleatória com reposição.</p>
-<p>Conforme explicam James, Witten, Hastie e Tibshirani (2017) cada vez que uma divisão em uma árvore é considerada uma amostra aleatória de m preditores são escolhidos como candidatos. Conforme estabelecem James, Witten, Hastie e Tibshirani (2017) uma amostra de m preditores é tomada a cada split e, tipicamente, se toma <span class="math notranslate nohighlight">\(m=\sqrt(p)\)</span> preditores para compor a amostra de cada split.</p>
-<p>Tal procedimento evita que as árvores formadas pelo algoritmo sejam muito parecidas, evitando que as árvores sejam fortemente correlacionadas.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="imputacao-de-dados">
+<h1>Imputação de dados<a class="headerlink" href="#imputacao-de-dados" title="Link permanente para este título">¶</a></h1>
+<div class="section" id="dados-para-treinamento-incompletos">
+<h2>Dados para treinamento incompletos<a class="headerlink" href="#dados-para-treinamento-incompletos" title="Link permanente para este título">¶</a></h2>
+<p>Inicialmente, imputamos um valor esperado para um atributo faltante considerando apenas qual o valor esperado dada a resposta, por exemplo:</p>
+<div class="figure align-default" id="directive-fig">
+<a class="reference internal image-reference" href="../_images/dados_incompletos_treinamento_antes.PNG"><img alt="../_images/dados_incompletos_treinamento_antes.PNG" src="../_images/dados_incompletos_treinamento_antes.PNG" style="height: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Dados de treinamento faltantes.</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">¶</a></p>
 </div>
-<div class="section" id="criacao-da-floresta">
-<h2>Criação da floresta<a class="headerlink" href="#criacao-da-floresta" title="Link permanente para este título">¶</a></h2>
-<p>Para criar o Random Forest, para cada conjunto bootstrap retirado dos dados originais será criada uma árvore, utilizando um subconjunto aleatório de variáveis em cada passo da árvore. Usualmente o número de variáveis utilizada inicialmente é a raiz quadrada do número de variáveis do conjunto de dados. Assim, o primeiro nó não considera todas as variáveis presentes no conjunto bootstrap, mas apenas uma fração delas à partir da qual se selecionará a primeira para divisão (split) considerando aquela com melhor desempenho na separação das amostras como o primeiro nó.</p>
-<p>A cada «step» são selecionadas aleatoriamente um conjunto de colunas (variáveis) das que «restaram» no subconjunto bootstrap e construidos os «splits» de cada nó até se chegar à folha (critério de parada). O número de variáveis utilizado para decisão em cada nó poderá alterar a estrutura da árvore, resultando em uma alteração da acurácia do Random Forest posteriormente.</p>
-<p>Usualmente, são testadas diferentes parâmetros de tunagem para então escolher o Random Forest com maior acurácia.</p>
-<p>Tal procedimento resulta em um grande número de diferentes árvores de decisão. Da forma de construção e do número de árvores geradas à partir do processo advém o nome «Random Forest».</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/dados_incompletos_treinamento_chute_inicial.PNG"><img alt="../_images/dados_incompletos_treinamento_chute_inicial.PNG" src="../_images/dados_incompletos_treinamento_chute_inicial.PNG" style="height: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">«Chute» inicial utilizando valores esperados para os atributos considerando a variável resposta.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<div class="section" id="julgamento-e-decisao">
-<h2>Julgamento e decisão<a class="headerlink" href="#julgamento-e-decisao" title="Link permanente para este título">¶</a></h2>
-<p>A forma de estimação de uma resposta desejada em cada uma das árvores é bastante parecida com a da árvore de decisão. Neste caso, cada amostra de teste (ou treinamento) tem sua resposta estimada por cada uma das k árvores de decisão geradas, isto é, os i-ésimo indivíduo terá sua resposta estimada por cada uma das k-ésimas árvores. No caso de um problema de classificação, cada uma dessas árvores gerarão uma resposta única binária positiva ou negativa, sendo os julgamentos de cada árvore somados.</p>
-<p>Caso o número de julgamentos positivos seja maior que o número de julgamentos negativos, a resposta estimada para a amostra i será positiva. Caso contrário, a amostra i terá sua resposta estimada como negativa. Dito de outra forma, a opção (positiva ou negativa) que recebeu maior número de votos é declarada a opção vencedora e será aquela estimada para a resposta da amostra.</p>
-<p>Este processo é chamado de «Bagging» ou «bootstrap agregation». Tal conceito vem do fato de se utilizar um processo de bootstrap para rearranjar aleatoriamente os dados e utilizar um critério de agregação (votos) para tomada de decisão.</p>
+<p>Após executar todas as árvores novamente, agora utilizando os chutes iniciais, contamos quais outras linhas foram categorizadas na mesma folha e usamos essa proximidade como pesos para definir quais valores devem ser imputados.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/matriz_de_proximidade_10_arvores.PNG"><img alt="../_images/matriz_de_proximidade_10_arvores.PNG" src="../_images/matriz_de_proximidade_10_arvores.PNG" style="height: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Matriz de proximidade. Linha 3 deve ter peso maior na decisão de valores que devem ser atribuídos a linha 4.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<div class="section" id="acuracia-na-predicao-e-oob">
-<h2>Acurácia na predição e OOB<a class="headerlink" href="#acuracia-na-predicao-e-oob" title="Link permanente para este título">¶</a></h2>
-<p>Nem todas as amostras presentes no conjunto de dados original serão utilizadas para a formação dos conjuntos de dados bootstrap. O subconjunto das amostras do conjunto original não empregadas para a formação dos conjuntos bootstrap são chamadas de Out of Bagging - OOB. As amostras OOB presentes no conjunto original são, então, empregadas para se estimar as respostas de todas as outras árvores construídas sem tais amostras. Novamente o processo de agregação indicará qual a classe ou resultado estimado para a resposta das amostras OOB.</p>
-<p>Uma medida amplamente empregada para se analisar a acurácia do Random Forest é a proporção de OOB corretamente classificadas pelo Random Forest. Já a proporção dos resultados para os quais as amostras OOB foram incorretamente classificadas, isto é, para os quais a agregação dos votos indicou uma classe ou resposta incorreta, dar-se-á o nome de Erro OOB.</p>
-<p>É possível utilizar tais medidas para refinamento da estrutura de geração das árvores, empregando um subconjunto de covariáveis de tamanho m distinto do inicial (maior ou menor).</p>
-<p>Com isso, a estrutura das árvores será diferente da estrutura inicialmente utilizada, gerando nós e splits distintos, o que, consequentemente resultará em árvores diferentes e em julgamentos diferentes.</p>
+<p>Assim, podemos rodar o modelo quantas vezes forem necessárias até que os valores imputados não sofram variações significativas.</p>
 </div>
-<div class="section" id="referencias">
-<h2>Referências<a class="headerlink" href="#referencias" title="Link permanente para este título">¶</a></h2>
-<p>James, G. Witten, D., Hastie, T., Tibshirani, R. An introduction to Statistical Learning: with applications in R. New York, Springer, 2017.</p>
+<div class="section" id="dados-de-classificacao-incompletos">
+<h2>Dados de classificação incompletos<a class="headerlink" href="#dados-de-classificacao-incompletos" title="Link permanente para este título">¶</a></h2>
+<p>Caso seja necessário fazer imputação de dados que desejamos classificar, uma opção é duplicar o dado e avaliar com qual imputação o modelo é mais preciso.</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/dados_incompletos_durante_classificação_copia1.PNG"><img alt="../_images/dados_incompletos_durante_classificação_copia1.PNG" src="../_images/dados_incompletos_durante_classificação_copia1.PNG" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Cópia com resposta Yes</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../_images/dados_incompletos_durante_classificação_copia2.PNG"><img alt="../_images/dados_incompletos_durante_classificação_copia2.PNG" src="../_images/dados_incompletos_durante_classificação_copia2.PNG" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Cópia com resposta No</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 </div>
 
@@ -336,17 +302,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="arvores_de_decisao.html" title="anterior page">
+    <a class='left-prev' id="prev-link" href="random_forest.html" title="anterior page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">anterior</p>
-            <p class="prev-next-title">Árvores de Decisão</p>
+            <p class="prev-next-title">Random Forest</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="imputacao_de_dados.html" title="próximo page">
+    <a class='right-next' id="next-link" href="exemplo_classificacao.html" title="próximo page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">próximo</p>
-        <p class="prev-next-title">Imputação de dados</p>
+        <p class="prev-next-title">Classificação</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
