@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Glossário &#8212; Seminário - Random Forest</title>
+    <title>Adaptative Boosting (ADABoost) &#8212; Seminário - Random Forest</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,9 +52,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Pesquisar" href="../search.html" />
-    <link rel="prev" title="Regressão" href="exemplo_regressao.html" />
+    <link rel="next" title="Imputação de dados" href="imputacao_de_dados.html" />
+    <link rel="prev" title="Random Forest" href="random_forest.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="pt">
     
@@ -102,8 +105,8 @@ const thebe_selector_output = ".output, .cell_output"
    Random Forest
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ada_boost.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Adaptative Boosting (ADABoost)
   </a>
  </li>
@@ -122,8 +125,8 @@ const thebe_selector_output = ".output, .cell_output"
    Regressão
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="glossario.html">
    Glossário
   </a>
  </li>
@@ -168,7 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/src/glossario.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/src/ada_boost.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Baixar arquivo fonte" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -193,6 +196,29 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Conteúdo
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descricao">
+   Descrição
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pesos-dos-tocos">
+   Pesos dos tocos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pesos-das-amostras">
+   Pesos das amostras
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -200,30 +226,69 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Glossário</h1>
+                <h1>Adaptative Boosting (ADABoost)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Conteúdo </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descricao">
+   Descrição
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pesos-dos-tocos">
+   Pesos dos tocos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pesos-das-amostras">
+   Pesos das amostras
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="glossario">
-<h1>Glossário<a class="headerlink" href="#glossario" title="Link permanente para este título">¶</a></h1>
-<ul class="simple">
-<li><p><strong>Bagging (Bootstrap Aggregating)</strong>: reamostragem com reposição usada para treinamento.</p></li>
-<li><p><strong>Nodes (Nós)</strong></p>
-<ul>
-<li><p><strong>Root Node</strong>: raíz, o nó inicial de cada árvore.</p></li>
-<li><p><strong>Internal Nodes</strong>: nós que direcionam o fluxo para outros nós internos ou para uma folha.</p></li>
-<li><p><strong>Leaf Nodes</strong>: folhas da árvore com a resposta estimada.</p></li>
-</ul>
-</li>
-<li><p><strong>OOB (Out-of-Bag)</strong>: observação não usada no bagging que pode ser usada como validação.</p></li>
-</ul>
+  <div class="tex2jax_ignore mathjax_ignore section" id="adaptative-boosting-adaboost">
+<h1>Adaptative Boosting (ADABoost)<a class="headerlink" href="#adaptative-boosting-adaboost" title="Link permanente para este título">¶</a></h1>
+<div class="section" id="descricao">
+<h2>Descrição<a class="headerlink" href="#descricao" title="Link permanente para este título">¶</a></h2>
+<p>É um modelo de Random Forest com árvores fracas, com apenas um nó, chamadas de tocos (stumps). Cada toco recebe um fator de correção a partir do toco anterior.</p>
+<div class="math notranslate nohighlight">
+\[
+    F_T(x) = \sum_{t=1}^T f_t(x)
+\]</div>
+</div>
+<div class="section" id="pesos-dos-tocos">
+<h2>Pesos dos tocos<a class="headerlink" href="#pesos-dos-tocos" title="Link permanente para este título">¶</a></h2>
+<p>O peso de cada toco é corrigido pela sua acurácia.</p>
+<div class="math notranslate nohighlight">
+\[
+    \alpha = \eta \frac{1 - TotalErros}{TotalErros}
+\]</div>
+</div>
+<div class="section" id="pesos-das-amostras">
+<h2>Pesos das amostras<a class="headerlink" href="#pesos-das-amostras" title="Link permanente para este título">¶</a></h2>
+<p>Amostras que foram classificadas de maneiro incorreta tem o seu peso aumentado, já as árvoes classificadas corretamnte pelo modelo tem seu peso diminuido.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{gather}
+        Peso = Peso_{t-1}e^{\alpha} \\
+        Peso = Peso_{t-1}e^{-\alpha} \\
+    \end{gather}
+\end{split}\]</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -251,12 +316,19 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="exemplo_regressao.html" title="anterior page">
+    <a class='left-prev' id="prev-link" href="random_forest.html" title="anterior page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">anterior</p>
-            <p class="prev-next-title">Regressão</p>
+            <p class="prev-next-title">Random Forest</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="imputacao_de_dados.html" title="próximo page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">próximo</p>
+        <p class="prev-next-title">Imputação de dados</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
