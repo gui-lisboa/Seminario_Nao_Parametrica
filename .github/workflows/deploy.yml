@@ -25,6 +25,10 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
+        
+    - name: Setup Graphviz
+      uses: ts-graphviz/setup-graphviz@v1
+
     # Build the book
     - name: Build the book
       run: |
