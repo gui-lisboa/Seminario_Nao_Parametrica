@@ -161,9 +161,9 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/src/arvores_de_decisao.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/src/arvores_de_decisao.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Baixar arquivo fonte" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir em PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -200,28 +200,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#sequencias-de-decisoes">
    Sequências de decisões
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#caso-nominal">
-     Caso nominal
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#caso-continuo">
-     Caso contínuo
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#caso-ordinal">
-     Caso ordinal
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#criterio-de-parada">
-   Critério de parada
-  </a>
  </li>
 </ul>
 
@@ -252,28 +230,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#sequencias-de-decisoes">
    Sequências de decisões
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#caso-nominal">
-     Caso nominal
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#caso-continuo">
-     Caso contínuo
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#caso-ordinal">
-     Caso ordinal
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#criterio-de-parada">
-   Critério de parada
-  </a>
  </li>
 </ul>
 
@@ -288,9 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Árvores de Decisão<a class="headerlink" href="#arvores-de-decisao" title="Link permanente para este título">¶</a></h1>
 <div class="section" id="definicao">
 <h2>Definição<a class="headerlink" href="#definicao" title="Link permanente para este título">¶</a></h2>
-<p>Diagrama que representa uma sequência de decisões binárias com o objetivo de obter uma resposta.</p>
-<p><strong>Exemplo</strong>:</p>
-<p>TODO</p>
+<p>Diagrama que representa uma sequência de decisões binárias com o objetivo de obter uma resposta. Apesar de ter interpetração fácil, uma única árvore de decisão tem ótimo desempenho com os dados usados na sua contrução, mas é, quando comparada com outros métodos de classificação ou regressão, consideravelmente imprecisa.</p>
 </div>
 <div class="section" id="sequencias-de-decisoes">
 <h2>Sequências de decisões<a class="headerlink" href="#sequencias-de-decisoes" title="Link permanente para este título">¶</a></h2>
@@ -299,20 +253,6 @@ const thebe_selector_output = ".output, .cell_output"
 \[
     Gini(D) = 1 - \sum_{i=1}^{k}p_{i}^{2}
 \]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-
-<span class="k">def</span> <span class="nf">impureza_gini</span><span class="p">(</span><span class="n">respostas</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">:</span>
-    <span class="n">numero_observacoes</span> <span class="o">=</span> <span class="n">respostas</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-    <span class="n">p_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">respostas</span> <span class="o">/</span> <span class="n">numero_observacoes</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-    <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">p_sum</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>O atributo escolhido deve ser aquele com menor índice de impureza, ou seja, aquele que melhor sapara a resposta. Ao dividr o fluxo usando uma variável qualquer <span class="math notranslate nohighlight">\(A\)</span>, é possível que o número de observações que sejam levadas aos subgrupos <span class="math notranslate nohighlight">\(D_1\)</span> e <span class="math notranslate nohighlight">\(D_2\)</span> seja diferente. Nestes casos, devemos aplicar um peso no índice de impureza, onde <span class="math notranslate nohighlight">\(n\)</span> é o total de observações sob a variável <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(n_1\)</span> e <span class="math notranslate nohighlight">\(n_2\)</span> são o número de observações que serão colocadas nos subgrupos <span class="math notranslate nohighlight">\(D_1\)</span> e <span class="math notranslate nohighlight">\(D_2\)</span></p>
 <div class="math notranslate nohighlight">
 \[
@@ -323,20 +263,6 @@ const thebe_selector_output = ".output, .cell_output"
 \[
     \Delta Gini(A) = Gini(D) - Gini_{A}(D)
 \]</div>
-<div class="section" id="caso-nominal">
-<h3>Caso nominal<a class="headerlink" href="#caso-nominal" title="Link permanente para este título">¶</a></h3>
-</div>
-<div class="section" id="caso-continuo">
-<h3>Caso contínuo<a class="headerlink" href="#caso-continuo" title="Link permanente para este título">¶</a></h3>
-</div>
-<div class="section" id="caso-ordinal">
-<h3>Caso ordinal<a class="headerlink" href="#caso-ordinal" title="Link permanente para este título">¶</a></h3>
-</div>
-</div>
-<div class="section" id="criterio-de-parada">
-<h2>Critério de parada<a class="headerlink" href="#criterio-de-parada" title="Link permanente para este título">¶</a></h2>
-<p>qnd não continuar o ramo e definir uma resposta (folha)</p>
-<p>Gini negativo</p>
 </div>
 </div>
 
