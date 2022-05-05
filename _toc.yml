@@ -7,6 +7,7 @@ root: index
 chapters:
   - file: src/arvores_de_decisao
   - file: src/random_forest
+  - file: src/imputacao_de_dados
   - file: src/exemplo_classificacao
   - file: src/exemplo_regressao
   - file: src/glossario
