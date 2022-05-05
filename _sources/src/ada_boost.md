@@ -5,7 +5,7 @@
 É um modelo de Random Forest com árvores fracas, com apenas um nó, chamadas de tocos (stumps). Cada toco recebe um fator de correção a partir do toco anterior.
 
 $$
-    F_T(x) = \sum_{t=1}^T f_t(x)
+    E_t = \sum_i E[F_{t-1}(x_i) + \alpha_t h(x_i)]
 $$
 
 ## Pesos dos tocos
