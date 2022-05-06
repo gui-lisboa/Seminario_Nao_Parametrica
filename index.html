@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Seminário de Não Paramétrica &#8212; Seminário - Random Forest</title>
+    <title>Seminário - Random Forest</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -54,7 +54,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Pesquisar" href="search.html" />
-    <link rel="next" title="Árvores de Decisão" href="src/arvores_de_decisao.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="pt">
     
@@ -83,8 +82,6 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/arvores.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Seminário - Random Forest</h1>
-      
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
@@ -92,41 +89,6 @@ const thebe_selector_output = ".output, .cell_output"
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="src/arvores_de_decisao.html">
-   Árvores de Decisão
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="src/random_forest.html">
-   Random Forest
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="src/ada_boost.html">
-   Adaptative Boosting (ADABoost)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="src/imputacao_de_dados.html">
-   Imputação de dados
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="src/exemplo_classificacao.html">
-   Classificação
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="src/exemplo_regressao.html">
-   Regressão
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="src/glossario.html">
-   Glossário
-  </a>
- </li>
 </ul>
 
     </div>
@@ -160,23 +122,6 @@ const thebe_selector_output = ".output, .cell_output"
             </button>
             
             
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Baixe esta página"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/index.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Baixar arquivo fonte" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir em PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
             <!-- Source interaction buttons -->
 
             <!-- Full screen (wrap in <a> to have style consistency -->
@@ -193,6 +138,64 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Conteúdo
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#document-src/arvores_de_decisao">
+   Árvores de Decisão
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#document-src/random_forest">
+   Random Forest
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#document-src/ada_boost">
+   Adaptative Boosting (ADABoost)
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#document-src/imputacao_de_dados">
+   Imputação de dados
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#document-src/exemplo_classificacao">
+   Classificação
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#visualizacao-de-uma-unica-arvore">
+   Visualização de uma única árvore
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#document-src/exemplo_regressao">
+   Regressão
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#algoritmo-de-arvores-de-decisao">
+   Algoritmo de árvores de decisão
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#random-forest">
+   Random Forest
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#document-src/glossario">
+   Glossário
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -205,6 +208,64 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Conteúdo </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#document-src/arvores_de_decisao">
+   Árvores de Decisão
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#document-src/random_forest">
+   Random Forest
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#document-src/ada_boost">
+   Adaptative Boosting (ADABoost)
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#document-src/imputacao_de_dados">
+   Imputação de dados
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#document-src/exemplo_classificacao">
+   Classificação
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#visualizacao-de-uma-unica-arvore">
+   Visualização de uma única árvore
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#document-src/exemplo_regressao">
+   Regressão
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#algoritmo-de-arvores-de-decisao">
+   Algoritmo de árvores de decisão
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#random-forest">
+   Random Forest
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="index.html#document-src/glossario">
+   Glossário
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -222,6 +283,1773 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Rodrigo Alves Silva: GRR20214488</p></li>
 </ul>
 <div class="toctree-wrapper compound">
+<span id="document-src/arvores_de_decisao"></span><div class="tex2jax_ignore mathjax_ignore section" id="arvores-de-decisao">
+<h2>Árvores de Decisão<a class="headerlink" href="#arvores-de-decisao" title="Link permanente para este título">¶</a></h2>
+<div class="section" id="definicao">
+<h3>Definição<a class="headerlink" href="#definicao" title="Link permanente para este título">¶</a></h3>
+<p>Diagrama que representa uma sequência de decisões binárias com o objetivo de obter uma resposta. Apesar de ter interpetração fácil, uma única árvore de decisão tem ótimo desempenho com os dados usados na sua contrução, mas é, quando comparada com outros métodos de classificação ou regressão, consideravelmente imprecisa.</p>
+</div>
+<div class="section" id="sequencias-de-decisoes">
+<h3>Sequências de decisões<a class="headerlink" href="#sequencias-de-decisoes" title="Link permanente para este título">¶</a></h3>
+<p>Para decidir qual atributo deve ser usado como critério de decisão em um nó, devemos mensurar o grau de impureza de Gini.</p>
+<div class="math notranslate nohighlight">
+\[
+    Gini(D) = 1 - \sum_{i=1}^{k}p_{i}^{2}
+\]</div>
+<p>O atributo escolhido deve ser aquele com menor índice de impureza, ou seja, aquele que melhor sapara a resposta. Ao dividr o fluxo usando uma variável qualquer <span class="math notranslate nohighlight">\(A\)</span>, é possível que o número de observações que sejam levadas aos subgrupos <span class="math notranslate nohighlight">\(D_1\)</span> e <span class="math notranslate nohighlight">\(D_2\)</span> seja diferente. Nestes casos, devemos aplicar um peso no índice de impureza, onde <span class="math notranslate nohighlight">\(n\)</span> é o total de observações sob a variável <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(n_1\)</span> e <span class="math notranslate nohighlight">\(n_2\)</span> são o número de observações que serão colocadas nos subgrupos <span class="math notranslate nohighlight">\(D_1\)</span> e <span class="math notranslate nohighlight">\(D_2\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+    Gini_{A}(D) = \frac{n_1}{n}Gini(D_1) + \frac{n_2}{n}Gini(D_2)
+\]</div>
+<p>Ganho de Gini</p>
+<div class="math notranslate nohighlight">
+\[
+    \Delta Gini(A) = Gini(D) - Gini_{A}(D)
+\]</div>
+</div>
+</div>
+<span id="document-src/random_forest"></span><div class="tex2jax_ignore mathjax_ignore section" id="random-forest">
+<h2>Random Forest<a class="headerlink" href="#random-forest" title="Link permanente para este título">¶</a></h2>
+<div class="section" id="descricao">
+<h3>Descrição<a class="headerlink" href="#descricao" title="Link permanente para este título">¶</a></h3>
+<p>Essencialmente Random Forests são constituidas de um grande conjunto de árvores de decisões. Os conceitos são similares, porém a aplicabilidade, flexibilidade e precisão são diferentes. A motivação por trás do uso do Random Forest está no fato de as árvores de decisão sofrerem com uma elevada variância. Como estabelecem James, Witten, Hastie e Tibshirani (2017), para o caso de separação em amostra de treinamento e teste, as árvores de decisão tendem a ter resultados muito diferentes em termos de desempenho em cada uma das amostras, sendo alguns de seus benefícios a simplicidade de interpretação e análise.</p>
+<p>O Random Forest é pensado para solucionar tal problema, combinando a simplicidade das árvores de decisão com uma flexibilidade advinda da utilização de uma série de árvores de decisão não correlacionadas e construídas à partir de conjuntos simulados de dados extraídos do conjunto original denominados «bootstrap».</p>
+<p>Um conjunto bootstrap é um amostra (ou conjunto de dados) advinda dos dados originais que poderá ser do mesmo tamanho que dos dados originais e que poderá, inclusive, ter linhas repetidas. Desta forma, a seleção para compor a amostra bootstrap é aleatória com reposição.</p>
+<p>Conforme explicam James, Witten, Hastie e Tibshirani (2017) cada vez que uma divisão em uma árvore é considerada uma amostra aleatória de m preditores são escolhidos como candidatos. Conforme estabelecem James, Witten, Hastie e Tibshirani (2017) uma amostra de m preditores é tomada a cada split e, tipicamente, se toma <span class="math notranslate nohighlight">\(m=\sqrt(p)\)</span> preditores para compor a amostra de cada split.</p>
+<p>Tal procedimento evita que as árvores formadas pelo algoritmo sejam muito parecidas, evitando que as árvores sejam fortemente correlacionadas.</p>
+</div>
+<div class="section" id="criacao-da-floresta">
+<h3>Criação da floresta<a class="headerlink" href="#criacao-da-floresta" title="Link permanente para este título">¶</a></h3>
+<p>Para criar o Random Forest, para cada conjunto bootstrap retirado dos dados originais será criada uma árvore, utilizando um subconjunto aleatório de variáveis em cada passo da árvore. Usualmente o número de variáveis utilizada inicialmente é a raiz quadrada do número de variáveis do conjunto de dados. Assim, o primeiro nó não considera todas as variáveis presentes no conjunto bootstrap, mas apenas uma fração delas à partir da qual se selecionará a primeira para divisão (split) considerando aquela com melhor desempenho na separação das amostras como o primeiro nó.</p>
+<p>A cada «step» são selecionadas aleatoriamente um conjunto de colunas (variáveis) das que «restaram» no subconjunto bootstrap e construidos os «splits» de cada nó até se chegar à folha (critério de parada). O número de variáveis utilizado para decisão em cada nó poderá alterar a estrutura da árvore, resultando em uma alteração da acurácia do Random Forest posteriormente.</p>
+<p>Usualmente, são testadas diferentes parâmetros de tunagem para então escolher o Random Forest com maior acurácia.</p>
+<p>Tal procedimento resulta em um grande número de diferentes árvores de decisão. Da forma de construção e do número de árvores geradas à partir do processo advém o nome «Random Forest».</p>
+</div>
+<div class="section" id="julgamento-e-decisao">
+<h3>Julgamento e decisão<a class="headerlink" href="#julgamento-e-decisao" title="Link permanente para este título">¶</a></h3>
+<p>A forma de estimação de uma resposta desejada em cada uma das árvores é bastante parecida com a da árvore de decisão. Neste caso, cada amostra de teste (ou treinamento) tem sua resposta estimada por cada uma das k árvores de decisão geradas, isto é, os i-ésimo indivíduo terá sua resposta estimada por cada uma das k-ésimas árvores. No caso de um problema de classificação, cada uma dessas árvores gerarão uma resposta única binária positiva ou negativa, sendo os julgamentos de cada árvore somados.</p>
+<p>Caso o número de julgamentos positivos seja maior que o número de julgamentos negativos, a resposta estimada para a amostra i será positiva. Caso contrário, a amostra i terá sua resposta estimada como negativa. Dito de outra forma, a opção (positiva ou negativa) que recebeu maior número de votos é declarada a opção vencedora e será aquela estimada para a resposta da amostra.</p>
+<p>Este processo é chamado de «Bagging» ou «bootstrap agregation». Tal conceito vem do fato de se utilizar um processo de bootstrap para rearranjar aleatoriamente os dados e utilizar um critério de agregação (votos) para tomada de decisão.</p>
+</div>
+<div class="section" id="acuracia-na-predicao-e-oob">
+<h3>Acurácia na predição e OOB<a class="headerlink" href="#acuracia-na-predicao-e-oob" title="Link permanente para este título">¶</a></h3>
+<p>Nem todas as amostras presentes no conjunto de dados original serão utilizadas para a formação dos conjuntos de dados bootstrap. O subconjunto das amostras do conjunto original não empregadas para a formação dos conjuntos bootstrap são chamadas de Out of Bagging - OOB. As amostras OOB presentes no conjunto original são, então, empregadas para se estimar as respostas de todas as outras árvores construídas sem tais amostras. Novamente o processo de agregação indicará qual a classe ou resultado estimado para a resposta das amostras OOB.</p>
+<p>Uma medida amplamente empregada para se analisar a acurácia do Random Forest é a proporção de OOB corretamente classificadas pelo Random Forest. Já a proporção dos resultados para os quais as amostras OOB foram incorretamente classificadas, isto é, para os quais a agregação dos votos indicou uma classe ou resposta incorreta, dar-se-á o nome de Erro OOB.</p>
+<p>É possível utilizar tais medidas para refinamento da estrutura de geração das árvores, empregando um subconjunto de covariáveis de tamanho m distinto do inicial (maior ou menor).</p>
+<p>Com isso, a estrutura das árvores será diferente da estrutura inicialmente utilizada, gerando nós e splits distintos, o que, consequentemente resultará em árvores diferentes e em julgamentos diferentes.</p>
+</div>
+<div class="section" id="referencias">
+<h3>Referências<a class="headerlink" href="#referencias" title="Link permanente para este título">¶</a></h3>
+<p>James, G. Witten, D., Hastie, T., Tibshirani, R. An introduction to Statistical Learning: with applications in R. New York, Springer, 2017.</p>
+</div>
+</div>
+<span id="document-src/ada_boost"></span><div class="tex2jax_ignore mathjax_ignore section" id="adaptative-boosting-adaboost">
+<h2>Adaptative Boosting (ADABoost)<a class="headerlink" href="#adaptative-boosting-adaboost" title="Link permanente para este título">¶</a></h2>
+<div class="section" id="descricao">
+<h3>Descrição<a class="headerlink" href="#descricao" title="Link permanente para este título">¶</a></h3>
+<p>É um modelo de Random Forest com árvores fracas, com apenas um nó, chamadas de tocos (stumps). Cada toco recebe um fator de correção a partir do toco anterior.</p>
+<div class="math notranslate nohighlight">
+\[
+    E_t = \sum_i E[F_{t-1}(x_i) + \alpha_t h(x_i)]
+\]</div>
+</div>
+<div class="section" id="pesos-dos-tocos">
+<h3>Pesos dos tocos<a class="headerlink" href="#pesos-dos-tocos" title="Link permanente para este título">¶</a></h3>
+<p>O peso de cada toco é corrigido pela sua acurácia.</p>
+<div class="math notranslate nohighlight">
+\[
+    \alpha = \eta \frac{1 - TotalErros}{TotalErros}
+\]</div>
+</div>
+<div class="section" id="pesos-das-amostras">
+<h3>Pesos das amostras<a class="headerlink" href="#pesos-das-amostras" title="Link permanente para este título">¶</a></h3>
+<p>Amostras que foram classificadas de maneiro incorreta tem o seu peso aumentado, já as árvoes classificadas corretamnte pelo modelo tem seu peso diminuido.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{gather}
+        Peso = Peso_{t-1}e^{\alpha} \\
+        Peso = Peso_{t-1}e^{-\alpha} \\
+    \end{gather}
+\end{split}\]</div>
+</div>
+</div>
+<span id="document-src/imputacao_de_dados"></span><div class="tex2jax_ignore mathjax_ignore section" id="imputacao-de-dados">
+<h2>Imputação de dados<a class="headerlink" href="#imputacao-de-dados" title="Link permanente para este título">¶</a></h2>
+<div class="section" id="dados-para-treinamento-incompletos">
+<h3>Dados para treinamento incompletos<a class="headerlink" href="#dados-para-treinamento-incompletos" title="Link permanente para este título">¶</a></h3>
+<p>Inicialmente, imputamos um valor esperado para um atributo faltante considerando apenas qual o valor esperado dada a resposta, por exemplo:</p>
+<div class="figure align-default" id="directive-fig">
+<a class="reference internal image-reference" href="_images/dados_incompletos_treinamento_antes.PNG"><img alt="_images/dados_incompletos_treinamento_antes.PNG" src="_images/dados_incompletos_treinamento_antes.PNG" style="height: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Dados de treinamento faltantes.</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="_images/dados_incompletos_treinamento_chute_inicial.PNG"><img alt="_images/dados_incompletos_treinamento_chute_inicial.PNG" src="_images/dados_incompletos_treinamento_chute_inicial.PNG" style="height: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">«Chute» inicial utilizando valores esperados para os atributos considerando a variável resposta.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Após executar todas as árvores novamente, agora utilizando os chutes iniciais, contamos quais outras linhas foram categorizadas na mesma folha e usamos essa proximidade como pesos para definir quais valores devem ser imputados.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="_images/matriz_de_proximidade_10_arvores.PNG"><img alt="_images/matriz_de_proximidade_10_arvores.PNG" src="_images/matriz_de_proximidade_10_arvores.PNG" style="height: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Matriz de proximidade. Linha 3 deve ter peso maior na decisão de valores que devem ser atribuídos a linha 4.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Assim, podemos rodar o modelo quantas vezes forem necessárias até que os valores imputados não sofram variações significativas.</p>
+</div>
+<div class="section" id="dados-de-classificacao-incompletos">
+<h3>Dados de classificação incompletos<a class="headerlink" href="#dados-de-classificacao-incompletos" title="Link permanente para este título">¶</a></h3>
+<p>Caso seja necessário fazer imputação de dados que desejamos classificar, uma opção é duplicar o dado e avaliar com qual imputação o modelo é mais preciso.</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="_images/dados_incompletos_durante_classificação_copia1.PNG"><img alt="_images/dados_incompletos_durante_classificação_copia1.PNG" src="_images/dados_incompletos_durante_classificação_copia1.PNG" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Cópia com resposta Yes</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="_images/dados_incompletos_durante_classificação_copia2.PNG"><img alt="_images/dados_incompletos_durante_classificação_copia2.PNG" src="_images/dados_incompletos_durante_classificação_copia2.PNG" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Cópia com resposta No</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<span id="document-src/exemplo_classificacao"></span><div class="tex2jax_ignore mathjax_ignore section" id="classificacao">
+<h2>Classificação<a class="headerlink" href="#classificacao" title="Link permanente para este título">¶</a></h2>
+<div class="section" id="nivel-de-adaptacao-de-estudantes-no-ead">
+<h3>Nível de Adaptação de Estudantes no EAD<a class="headerlink" href="#nivel-de-adaptacao-de-estudantes-no-ead" title="Link permanente para este título">¶</a></h3>
+<p><a class="reference external" href="https://www.kaggle.com/datasets/mdmahmudulhasansuzan/students-adaptability-level-in-online-education">https://www.kaggle.com/datasets/mdmahmudulhasansuzan/students-adaptability-level-in-online-education</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">carrega_dataset_EAD</span>
+
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">carrega_dataset_EAD</span><span class="p">()</span>
+<span class="n">dataset</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Education Level</th>
+      <th>Institution Type</th>
+      <th>IT Student</th>
+      <th>Location</th>
+      <th>Load-shedding</th>
+      <th>Financial Condition</th>
+      <th>Internet Type</th>
+      <th>Network Type</th>
+      <th>Class Duration</th>
+      <th>Self Lms</th>
+      <th>Device</th>
+      <th>Adaptivity Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Boy</td>
+      <td>21-25</td>
+      <td>University</td>
+      <td>Non Government</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Low</td>
+      <td>Mid</td>
+      <td>Wifi</td>
+      <td>4G</td>
+      <td>3-6</td>
+      <td>No</td>
+      <td>Tab</td>
+      <td>Moderate</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Girl</td>
+      <td>21-25</td>
+      <td>University</td>
+      <td>Non Government</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>High</td>
+      <td>Mid</td>
+      <td>Mobile Data</td>
+      <td>4G</td>
+      <td>1-3</td>
+      <td>Yes</td>
+      <td>Mobile</td>
+      <td>Moderate</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Girl</td>
+      <td>16-20</td>
+      <td>College</td>
+      <td>Government</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Low</td>
+      <td>Mid</td>
+      <td>Wifi</td>
+      <td>4G</td>
+      <td>1-3</td>
+      <td>No</td>
+      <td>Mobile</td>
+      <td>Moderate</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Girl</td>
+      <td>11-15</td>
+      <td>School</td>
+      <td>Non Government</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Low</td>
+      <td>Mid</td>
+      <td>Mobile Data</td>
+      <td>4G</td>
+      <td>1-3</td>
+      <td>No</td>
+      <td>Mobile</td>
+      <td>Moderate</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Girl</td>
+      <td>16-20</td>
+      <td>School</td>
+      <td>Non Government</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Low</td>
+      <td>Poor</td>
+      <td>Mobile Data</td>
+      <td>3G</td>
+      <td>0</td>
+      <td>No</td>
+      <td>Mobile</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1200</th>
+      <td>Girl</td>
+      <td>16-20</td>
+      <td>College</td>
+      <td>Non Government</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Low</td>
+      <td>Mid</td>
+      <td>Wifi</td>
+      <td>4G</td>
+      <td>1-3</td>
+      <td>No</td>
+      <td>Mobile</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <th>1201</th>
+      <td>Girl</td>
+      <td>16-20</td>
+      <td>College</td>
+      <td>Non Government</td>
+      <td>No</td>
+      <td>No</td>
+      <td>High</td>
+      <td>Mid</td>
+      <td>Wifi</td>
+      <td>4G</td>
+      <td>3-6</td>
+      <td>No</td>
+      <td>Mobile</td>
+      <td>Moderate</td>
+    </tr>
+    <tr>
+      <th>1202</th>
+      <td>Boy</td>
+      <td>11-15</td>
+      <td>School</td>
+      <td>Non Government</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Low</td>
+      <td>Mid</td>
+      <td>Mobile Data</td>
+      <td>3G</td>
+      <td>1-3</td>
+      <td>No</td>
+      <td>Mobile</td>
+      <td>Moderate</td>
+    </tr>
+    <tr>
+      <th>1203</th>
+      <td>Girl</td>
+      <td>16-20</td>
+      <td>College</td>
+      <td>Non Government</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Low</td>
+      <td>Mid</td>
+      <td>Wifi</td>
+      <td>4G</td>
+      <td>1-3</td>
+      <td>No</td>
+      <td>Mobile</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <th>1204</th>
+      <td>Girl</td>
+      <td>11-15</td>
+      <td>School</td>
+      <td>Non Government</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Low</td>
+      <td>Poor</td>
+      <td>Mobile Data</td>
+      <td>3G</td>
+      <td>1-3</td>
+      <td>No</td>
+      <td>Mobile</td>
+      <td>Moderate</td>
+    </tr>
+  </tbody>
+</table>
+<p>1205 rows × 14 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="codificacao">
+<h3>Codificação<a class="headerlink" href="#codificacao" title="Link permanente para este título">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+
+<span class="n">codificadores</span> <span class="o">=</span> <span class="p">{</span><span class="n">coluna</span><span class="p">:</span> <span class="n">LabelEncoder</span><span class="p">()</span> <span class="k">for</span> <span class="n">coluna</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">columns</span><span class="p">}</span>
+<span class="n">dataset_codificado</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">coluna</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">:</span>
+    <span class="n">dataset_codificado</span><span class="p">[</span><span class="n">coluna</span><span class="p">]</span> <span class="o">=</span> <span class="n">codificadores</span><span class="p">[</span><span class="n">coluna</span><span class="p">]</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">coluna</span><span class="p">])</span>
+
+<span class="n">dataset_codificado</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Education Level</th>
+      <th>Institution Type</th>
+      <th>IT Student</th>
+      <th>Location</th>
+      <th>Load-shedding</th>
+      <th>Financial Condition</th>
+      <th>Internet Type</th>
+      <th>Network Type</th>
+      <th>Class Duration</th>
+      <th>Self Lms</th>
+      <th>Device</th>
+      <th>Adaptivity Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>3</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1200</th>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1201</th>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1202</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1203</th>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1204</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+<p>1205 rows × 14 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="modelo">
+<h3>Modelo<a class="headerlink" href="#modelo" title="Link permanente para este título">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">dataset_codificado</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">13</span><span class="p">]</span>
+<span class="n">modelo</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">oob_score</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fit</span> <span class="o">=</span> <span class="n">modelo</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">dataset_codificado</span><span class="p">[</span><span class="s1">&#39;Adaptivity Level&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="importancias">
+<h3>Importâncias<a class="headerlink" href="#importancias" title="Link permanente para este título">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">]})</span>
+
+<span class="n">desvio_padrao_estimadores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">arvore</span><span class="o">.</span><span class="n">feature_importances_</span> <span class="k">for</span> <span class="n">arvore</span> <span class="ow">in</span> <span class="n">modelo</span><span class="o">.</span><span class="n">estimators_</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">importancias</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">,</span>
+                         <span class="n">index</span><span class="o">=</span><span class="n">modelo</span><span class="o">.</span><span class="n">feature_names_in_</span><span class="p">)</span>
+<span class="n">importancias</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">yerr</span><span class="o">=</span><span class="n">desvio_padrao_estimadores</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/exemplo_classificacao_8_0.png" src="_images/exemplo_classificacao_8_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="visualizacao-de-uma-unica-arvore">
+<h2>Visualização de uma única árvore<a class="headerlink" href="#visualizacao-de-uma-unica-arvore" title="Link permanente para este título">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
+
+<span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">estimators_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+               <span class="n">feature_names</span><span class="o">=</span><span class="n">modelo</span><span class="o">.</span><span class="n">feature_names_in_</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+               <span class="n">class_names</span><span class="o">=</span><span class="s1">&#39;Adaptivity Level&#39;</span><span class="p">,</span>
+               <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/exemplo_classificacao_10_0.png" src="_images/exemplo_classificacao_10_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">export_text</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">estimators_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                         <span class="n">feature_names</span><span class="o">=</span><span class="n">modelo</span><span class="o">.</span><span class="n">feature_names_in_</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- Institution Type &lt;= 0.50
+|   |--- Class Duration &lt;= 0.50
+|   |   |--- Network Type &lt;= 1.50
+|   |   |   |--- class: 1.0
+|   |   |--- Network Type &gt;  1.50
+|   |   |   |--- Age &lt;= 3.50
+|   |   |   |   |--- Education Level &lt;= 1.50
+|   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |--- Education Level &gt;  1.50
+|   |   |   |   |   |--- Load-shedding &lt;= 0.50
+|   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- Load-shedding &gt;  0.50
+|   |   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |--- Age &gt;  3.50
+|   |   |   |   |--- class: 1.0
+|   |--- Class Duration &gt;  0.50
+|   |   |--- Financial Condition &lt;= 1.50
+|   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |--- Load-shedding &lt;= 0.50
+|   |   |   |   |   |   |--- Age &lt;= 1.50
+|   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Age &gt;  1.50
+|   |   |   |   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |   |   |   |--- Self Lms &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- Network Type &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |--- Network Type &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Self Lms &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |--- Load-shedding &gt;  0.50
+|   |   |   |   |   |   |--- Network Type &lt;= 1.50
+|   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Network Type &gt;  1.50
+|   |   |   |   |   |   |   |--- Education Level &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Education Level &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Education Level &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Education Level &gt;  1.50
+|   |   |   |   |   |   |   |   |   |--- Age &lt;= 2.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Age &gt;  2.50
+|   |   |   |   |   |   |   |   |   |   |--- Age &lt;= 3.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- Age &gt;  3.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |--- Device &lt;= 0.50
+|   |   |   |   |   |   |   |--- Education Level &lt;= 1.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Education Level &gt;  1.50
+|   |   |   |   |   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Device &gt;  0.50
+|   |   |   |   |   |   |   |--- Network Type &lt;= 1.50
+|   |   |   |   |   |   |   |   |--- Self Lms &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- Age &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |--- Age &gt;  1.50
+|   |   |   |   |   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Self Lms &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- Education Level &lt;= 1.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Education Level &gt;  1.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Network Type &gt;  1.50
+|   |   |   |   |   |   |   |   |--- Education Level &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |--- Load-shedding &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Load-shedding &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- Education Level &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- Education Level &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |--- Education Level &gt;  1.50
+|   |   |   |   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- Age &lt;= 3.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |   |--- Age &gt;  3.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |--- class: 1.0
+|   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |--- Education Level &lt;= 1.00
+|   |   |   |   |   |   |--- Age &lt;= 2.50
+|   |   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- Self Lms &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Self Lms &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |--- Age &gt;  2.50
+|   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |--- Education Level &gt;  1.00
+|   |   |   |   |   |   |--- Age &lt;= 3.50
+|   |   |   |   |   |   |   |--- Device &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Device &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Load-shedding &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |--- Load-shedding &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- Self Lms &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |   |--- Self Lms &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Age &gt;  3.50
+|   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |--- class: 1.0
+|   |   |--- Financial Condition &gt;  1.50
+|   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |--- class: 0.0
+|   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |--- Self Lms &lt;= 0.50
+|   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |--- Self Lms &gt;  0.50
+|   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |--- class: 2.0
+|   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |--- class: 0.0
+|--- Institution Type &gt;  0.50
+|   |--- Load-shedding &lt;= 0.50
+|   |   |--- IT Student &lt;= 0.50
+|   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |--- Education Level &lt;= 1.50
+|   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |--- Age &lt;= 1.50
+|   |   |   |   |   |   |   |--- Class Duration &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Class Duration &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Device &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |--- Device &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Age &gt;  1.50
+|   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |--- Education Level &gt;  1.50
+|   |   |   |   |   |--- class: 2.0
+|   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |--- class: 2.0
+|   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |--- Age &lt;= 2.50
+|   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |--- Age &gt;  2.50
+|   |   |   |   |   |   |--- class: 1.0
+|   |   |--- IT Student &gt;  0.50
+|   |   |   |--- Self Lms &lt;= 0.50
+|   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |--- class: 1.0
+|   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |--- Device &lt;= 0.50
+|   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |--- Device &gt;  0.50
+|   |   |   |   |   |   |--- class: 1.0
+|   |   |   |--- Self Lms &gt;  0.50
+|   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |--- Device &lt;= 0.50
+|   |   |   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- Device &gt;  0.50
+|   |   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |   |   |--- Device &lt;= 0.50
+|   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- Device &gt;  0.50
+|   |   |   |   |   |   |   |--- Age &lt;= 2.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Age &gt;  2.50
+|   |   |   |   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |   |   |--- Device &lt;= 1.50
+|   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |--- Device &gt;  1.50
+|   |   |   |   |   |   |   |--- class: 1.0
+|   |--- Load-shedding &gt;  0.50
+|   |   |--- Class Duration &lt;= 0.50
+|   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |--- class: 1.0
+|   |   |   |--- Location &gt;  0.50
+|   |   |   |   |--- class: 1.0
+|   |   |--- Class Duration &gt;  0.50
+|   |   |   |--- Class Duration &lt;= 1.50
+|   |   |   |   |--- Network Type &lt;= 1.50
+|   |   |   |   |   |--- Education Level &lt;= 1.50
+|   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- Self Lms &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- Education Level &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Education Level &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |--- Self Lms &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Self Lms &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- Age &lt;= 3.00
+|   |   |   |   |   |   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- Age &gt;  3.00
+|   |   |   |   |   |   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |   |--- Self Lms &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |--- Financial Condition &lt;= 1.50
+|   |   |   |   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Financial Condition &gt;  1.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |--- Education Level &gt;  1.50
+|   |   |   |   |   |   |--- Self Lms &lt;= 0.50
+|   |   |   |   |   |   |   |--- Age &lt;= 2.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Age &gt;  2.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |--- Self Lms &gt;  0.50
+|   |   |   |   |   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Device &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Device &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- Age &lt;= 3.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |   |--- Age &gt;  3.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |--- Network Type &gt;  1.50
+|   |   |   |   |   |--- Self Lms &lt;= 0.50
+|   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |--- Age &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Age &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Age &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |--- Financial Condition &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Financial Condition &gt;  1.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |   |--- Age &gt;  1.50
+|   |   |   |   |   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |--- Age &lt;= 4.00
+|   |   |   |   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- Age &lt;= 2.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |   |--- Age &gt;  2.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- Age &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |   |--- Age &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Age &gt;  4.00
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |--- Self Lms &gt;  0.50
+|   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |--- Financial Condition &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Financial Condition &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |--- Financial Condition &lt;= 1.00
+|   |   |   |   |   |   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- Device &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |   |   |--- Device &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Financial Condition &gt;  1.00
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |--- Class Duration &gt;  1.50
+|   |   |   |   |--- Age &lt;= 1.50
+|   |   |   |   |   |--- class: 2.0
+|   |   |   |   |--- Age &gt;  1.50
+|   |   |   |   |   |--- Financial Condition &lt;= 1.00
+|   |   |   |   |   |   |--- Age &lt;= 2.50
+|   |   |   |   |   |   |   |--- Network Type &lt;= 1.50
+|   |   |   |   |   |   |   |   |--- Education Level &lt;= 1.00
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |--- Education Level &gt;  1.00
+|   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- Network Type &gt;  1.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |--- Age &gt;  2.50
+|   |   |   |   |   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Network Type &lt;= 1.50
+|   |   |   |   |   |   |   |   |   |--- Internet Type &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |--- Internet Type &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- Device &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |   |   |   |--- Device &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |--- Network Type &gt;  1.50
+|   |   |   |   |   |   |   |   |   |--- Location &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |   |   |   |   |--- Location &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |--- Self Lms &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- Self Lms &gt;  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 2.0
+|   |   |   |   |   |--- Financial Condition &gt;  1.00
+|   |   |   |   |   |   |--- Education Level &lt;= 1.50
+|   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- Education Level &gt;  1.50
+|   |   |   |   |   |   |   |--- IT Student &lt;= 0.50
+|   |   |   |   |   |   |   |   |--- Device &lt;= 1.00
+|   |   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |   |--- Device &gt;  1.00
+|   |   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- IT Student &gt;  0.50
+|   |   |   |   |   |   |   |   |--- Device &lt;= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |   |--- Device &gt;  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 1.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<span id="document-src/exemplo_regressao"></span><div class="tex2jax_ignore mathjax_ignore section" id="regressao">
+<h2>Regressão<a class="headerlink" href="#regressao" title="Link permanente para este título">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">export_graphviz</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">carrega_dataset_boston_housing</span>
+<span class="kn">import</span> <span class="nn">seaborn.apionly</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">graphviz</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">carrega_dataset_boston_housing</span><span class="p">()</span>
+<span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.10.4/x64/lib/python3.10/site-packages/seaborn/apionly.py:9: UserWarning: As seaborn no longer sets a default style on import, the seaborn.apionly module is deprecated. It will be removed in a future version.
+  warnings.warn(msg, UserWarning)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>crim</th>
+      <th>zn</th>
+      <th>indus</th>
+      <th>chas</th>
+      <th>nox</th>
+      <th>rm</th>
+      <th>age</th>
+      <th>dis</th>
+      <th>rad</th>
+      <th>tax</th>
+      <th>ptratio</th>
+      <th>black</th>
+      <th>lstat</th>
+      <th>medv</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.00632</td>
+      <td>18.0</td>
+      <td>2.31</td>
+      <td>0</td>
+      <td>0.538</td>
+      <td>6.575</td>
+      <td>65.2</td>
+      <td>4.09</td>
+      <td>1</td>
+      <td>296</td>
+      <td>15.3</td>
+      <td>396.9</td>
+      <td>4.98</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.02731</td>
+      <td>0.0</td>
+      <td>7.07</td>
+      <td>0</td>
+      <td>0.469</td>
+      <td>6.421</td>
+      <td>78.9</td>
+      <td>4.9671</td>
+      <td>2</td>
+      <td>242</td>
+      <td>17.8</td>
+      <td>396.9</td>
+      <td>9.14</td>
+      <td>21.6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.02729</td>
+      <td>0.0</td>
+      <td>7.07</td>
+      <td>0</td>
+      <td>0.469</td>
+      <td>7.185</td>
+      <td>61.1</td>
+      <td>4.9671</td>
+      <td>2</td>
+      <td>242</td>
+      <td>17.8</td>
+      <td>392.83</td>
+      <td>4.03</td>
+      <td>34.7</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.03237</td>
+      <td>0.0</td>
+      <td>2.18</td>
+      <td>0</td>
+      <td>0.458</td>
+      <td>6.998</td>
+      <td>45.8</td>
+      <td>6.0622</td>
+      <td>3</td>
+      <td>222</td>
+      <td>18.7</td>
+      <td>394.63</td>
+      <td>2.94</td>
+      <td>33.4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.06905</td>
+      <td>0.0</td>
+      <td>2.18</td>
+      <td>0</td>
+      <td>0.458</td>
+      <td>7.147</td>
+      <td>54.2</td>
+      <td>6.0622</td>
+      <td>3</td>
+      <td>222</td>
+      <td>18.7</td>
+      <td>396.9</td>
+      <td>5.33</td>
+      <td>36.2</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>501</th>
+      <td>0.06263</td>
+      <td>0.0</td>
+      <td>11.93</td>
+      <td>0</td>
+      <td>0.573</td>
+      <td>6.593</td>
+      <td>69.1</td>
+      <td>2.4786</td>
+      <td>1</td>
+      <td>273</td>
+      <td>21.0</td>
+      <td>391.99</td>
+      <td>9.67</td>
+      <td>22.4</td>
+    </tr>
+    <tr>
+      <th>502</th>
+      <td>0.04527</td>
+      <td>0.0</td>
+      <td>11.93</td>
+      <td>0</td>
+      <td>0.573</td>
+      <td>6.12</td>
+      <td>76.7</td>
+      <td>2.2875</td>
+      <td>1</td>
+      <td>273</td>
+      <td>21.0</td>
+      <td>396.9</td>
+      <td>9.08</td>
+      <td>20.6</td>
+    </tr>
+    <tr>
+      <th>503</th>
+      <td>0.06076</td>
+      <td>0.0</td>
+      <td>11.93</td>
+      <td>0</td>
+      <td>0.573</td>
+      <td>6.976</td>
+      <td>91.0</td>
+      <td>2.1675</td>
+      <td>1</td>
+      <td>273</td>
+      <td>21.0</td>
+      <td>396.9</td>
+      <td>5.64</td>
+      <td>23.9</td>
+    </tr>
+    <tr>
+      <th>504</th>
+      <td>0.10959</td>
+      <td>0.0</td>
+      <td>11.93</td>
+      <td>0</td>
+      <td>0.573</td>
+      <td>6.794</td>
+      <td>89.3</td>
+      <td>2.3889</td>
+      <td>1</td>
+      <td>273</td>
+      <td>21.0</td>
+      <td>393.45</td>
+      <td>6.48</td>
+      <td>22.0</td>
+    </tr>
+    <tr>
+      <th>505</th>
+      <td>0.04741</td>
+      <td>0.0</td>
+      <td>11.93</td>
+      <td>0</td>
+      <td>0.573</td>
+      <td>6.03</td>
+      <td>80.8</td>
+      <td>2.505</td>
+      <td>1</td>
+      <td>273</td>
+      <td>21.0</td>
+      <td>396.9</td>
+      <td>7.88</td>
+      <td>11.9</td>
+    </tr>
+  </tbody>
+</table>
+<p>506 rows × 14 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corr</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+
+<span class="n">corr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>crim</th>
+      <th>zn</th>
+      <th>indus</th>
+      <th>chas</th>
+      <th>nox</th>
+      <th>rm</th>
+      <th>age</th>
+      <th>dis</th>
+      <th>rad</th>
+      <th>tax</th>
+      <th>ptratio</th>
+      <th>black</th>
+      <th>lstat</th>
+      <th>medv</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>crim</th>
+      <td>1.000000</td>
+      <td>-0.200469</td>
+      <td>0.406583</td>
+      <td>-0.055892</td>
+      <td>0.420972</td>
+      <td>-0.219247</td>
+      <td>0.352734</td>
+      <td>-0.379670</td>
+      <td>0.625505</td>
+      <td>0.582764</td>
+      <td>0.289946</td>
+      <td>-0.385064</td>
+      <td>0.455621</td>
+      <td>-0.388305</td>
+    </tr>
+    <tr>
+      <th>zn</th>
+      <td>-0.200469</td>
+      <td>1.000000</td>
+      <td>-0.533828</td>
+      <td>-0.042697</td>
+      <td>-0.516604</td>
+      <td>0.311991</td>
+      <td>-0.569537</td>
+      <td>0.664408</td>
+      <td>-0.311948</td>
+      <td>-0.314563</td>
+      <td>-0.391679</td>
+      <td>0.175520</td>
+      <td>-0.412995</td>
+      <td>0.360445</td>
+    </tr>
+    <tr>
+      <th>indus</th>
+      <td>0.406583</td>
+      <td>-0.533828</td>
+      <td>1.000000</td>
+      <td>0.062938</td>
+      <td>0.763651</td>
+      <td>-0.391676</td>
+      <td>0.644779</td>
+      <td>-0.708027</td>
+      <td>0.595129</td>
+      <td>0.720760</td>
+      <td>0.383248</td>
+      <td>-0.356977</td>
+      <td>0.603800</td>
+      <td>-0.483725</td>
+    </tr>
+    <tr>
+      <th>chas</th>
+      <td>-0.055892</td>
+      <td>-0.042697</td>
+      <td>0.062938</td>
+      <td>1.000000</td>
+      <td>0.091203</td>
+      <td>0.091251</td>
+      <td>0.086518</td>
+      <td>-0.099176</td>
+      <td>-0.007368</td>
+      <td>-0.035587</td>
+      <td>-0.121515</td>
+      <td>0.048788</td>
+      <td>-0.053929</td>
+      <td>0.175260</td>
+    </tr>
+    <tr>
+      <th>nox</th>
+      <td>0.420972</td>
+      <td>-0.516604</td>
+      <td>0.763651</td>
+      <td>0.091203</td>
+      <td>1.000000</td>
+      <td>-0.302188</td>
+      <td>0.731470</td>
+      <td>-0.769230</td>
+      <td>0.611441</td>
+      <td>0.668023</td>
+      <td>0.188933</td>
+      <td>-0.380051</td>
+      <td>0.590879</td>
+      <td>-0.427321</td>
+    </tr>
+    <tr>
+      <th>rm</th>
+      <td>-0.219247</td>
+      <td>0.311991</td>
+      <td>-0.391676</td>
+      <td>0.091251</td>
+      <td>-0.302188</td>
+      <td>1.000000</td>
+      <td>-0.240265</td>
+      <td>0.205246</td>
+      <td>-0.209847</td>
+      <td>-0.292048</td>
+      <td>-0.355501</td>
+      <td>0.128069</td>
+      <td>-0.613808</td>
+      <td>0.695360</td>
+    </tr>
+    <tr>
+      <th>age</th>
+      <td>0.352734</td>
+      <td>-0.569537</td>
+      <td>0.644779</td>
+      <td>0.086518</td>
+      <td>0.731470</td>
+      <td>-0.240265</td>
+      <td>1.000000</td>
+      <td>-0.747881</td>
+      <td>0.456022</td>
+      <td>0.506456</td>
+      <td>0.261515</td>
+      <td>-0.273534</td>
+      <td>0.602339</td>
+      <td>-0.376955</td>
+    </tr>
+    <tr>
+      <th>dis</th>
+      <td>-0.379670</td>
+      <td>0.664408</td>
+      <td>-0.708027</td>
+      <td>-0.099176</td>
+      <td>-0.769230</td>
+      <td>0.205246</td>
+      <td>-0.747881</td>
+      <td>1.000000</td>
+      <td>-0.494588</td>
+      <td>-0.534432</td>
+      <td>-0.232471</td>
+      <td>0.291512</td>
+      <td>-0.496996</td>
+      <td>0.249929</td>
+    </tr>
+    <tr>
+      <th>rad</th>
+      <td>0.625505</td>
+      <td>-0.311948</td>
+      <td>0.595129</td>
+      <td>-0.007368</td>
+      <td>0.611441</td>
+      <td>-0.209847</td>
+      <td>0.456022</td>
+      <td>-0.494588</td>
+      <td>1.000000</td>
+      <td>0.910228</td>
+      <td>0.464741</td>
+      <td>-0.444413</td>
+      <td>0.488676</td>
+      <td>-0.381626</td>
+    </tr>
+    <tr>
+      <th>tax</th>
+      <td>0.582764</td>
+      <td>-0.314563</td>
+      <td>0.720760</td>
+      <td>-0.035587</td>
+      <td>0.668023</td>
+      <td>-0.292048</td>
+      <td>0.506456</td>
+      <td>-0.534432</td>
+      <td>0.910228</td>
+      <td>1.000000</td>
+      <td>0.460853</td>
+      <td>-0.441808</td>
+      <td>0.543993</td>
+      <td>-0.468536</td>
+    </tr>
+    <tr>
+      <th>ptratio</th>
+      <td>0.289946</td>
+      <td>-0.391679</td>
+      <td>0.383248</td>
+      <td>-0.121515</td>
+      <td>0.188933</td>
+      <td>-0.355501</td>
+      <td>0.261515</td>
+      <td>-0.232471</td>
+      <td>0.464741</td>
+      <td>0.460853</td>
+      <td>1.000000</td>
+      <td>-0.177383</td>
+      <td>0.374044</td>
+      <td>-0.507787</td>
+    </tr>
+    <tr>
+      <th>black</th>
+      <td>-0.385064</td>
+      <td>0.175520</td>
+      <td>-0.356977</td>
+      <td>0.048788</td>
+      <td>-0.380051</td>
+      <td>0.128069</td>
+      <td>-0.273534</td>
+      <td>0.291512</td>
+      <td>-0.444413</td>
+      <td>-0.441808</td>
+      <td>-0.177383</td>
+      <td>1.000000</td>
+      <td>-0.366087</td>
+      <td>0.333461</td>
+    </tr>
+    <tr>
+      <th>lstat</th>
+      <td>0.455621</td>
+      <td>-0.412995</td>
+      <td>0.603800</td>
+      <td>-0.053929</td>
+      <td>0.590879</td>
+      <td>-0.613808</td>
+      <td>0.602339</td>
+      <td>-0.496996</td>
+      <td>0.488676</td>
+      <td>0.543993</td>
+      <td>0.374044</td>
+      <td>-0.366087</td>
+      <td>1.000000</td>
+      <td>-0.737663</td>
+    </tr>
+    <tr>
+      <th>medv</th>
+      <td>-0.388305</td>
+      <td>0.360445</td>
+      <td>-0.483725</td>
+      <td>0.175260</td>
+      <td>-0.427321</td>
+      <td>0.695360</td>
+      <td>-0.376955</td>
+      <td>0.249929</td>
+      <td>-0.381626</td>
+      <td>-0.468536</td>
+      <td>-0.507787</td>
+      <td>0.333461</td>
+      <td>-0.737663</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">]})</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/exemplo_regressao_3_0.png" src="_images/exemplo_regressao_3_0.png" />
+</div>
+</div>
+<div class="section" id="separacao-de-dados-em-treino-e-teste-e-selecao-de-variaveis">
+<h3>Separação de dados em treino e teste, e seleção de variáveis<a class="headerlink" href="#separacao-de-dados-em-treino-e-teste-e-selecao-de-variaveis" title="Link permanente para este título">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s2">&quot;medv&quot;</span><span class="p">]]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;indus&#39;</span><span class="p">,</span><span class="s1">&#39;tax&#39;</span><span class="p">,</span><span class="s1">&#39;ptratio&#39;</span><span class="p">,</span> <span class="s1">&#39;lstat&#39;</span><span class="p">,</span> <span class="s1">&#39;rm&#39;</span><span class="p">]]</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">999</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="algoritmo-de-arvores-de-decisao">
+<h2>Algoritmo de árvores de decisão<a class="headerlink" href="#algoritmo-de-arvores-de-decisao" title="Link permanente para este título">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">treereg</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">999</span><span class="p">,</span> <span class="n">max_depth</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">criterion</span> <span class="o">=</span> <span class="s2">&quot;squared_error&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">treereg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">dot_data</span> <span class="o">=</span> <span class="n">export_graphviz</span><span class="p">(</span><span class="n">treereg</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span>  
+                           <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rounded</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+
+<span class="n">graph</span> <span class="o">=</span> <span class="n">graphviz</span><span class="o">.</span><span class="n">Source</span><span class="p">(</span><span class="n">dot_data</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">&quot;tree&quot;</span><span class="p">)</span>
+<span class="n">graph</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/exemplo_regressao_8_0.svg" src="_images/exemplo_regressao_8_0.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred_tree</span> <span class="o">=</span> <span class="n">treereg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Actual&#39;</span><span class="p">:</span><span class="n">y_test</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;Predicted&#39;</span><span class="p">:</span><span class="n">y_pred_tree</span><span class="p">})</span>
+
+<span class="n">treemse</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_tree</span><span class="p">)</span>
+<span class="n">treemae</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_tree</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean Squared Error:&#39;</span><span class="p">,</span> <span class="n">treemse</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean Absolute Error:&#39;</span><span class="p">,</span> <span class="n">treemae</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean Squared Error: 24.669935378079575
+Mean Absolute Error: 3.738466370052424
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.10.4/x64/lib/python3.10/site-packages/sklearn/metrics/_regression.py:95: FutureWarning: Arrays of bytes/strings is being converted to decimal numbers if dtype=&#39;numeric&#39;. This behavior is deprecated in 0.24 and will be removed in 1.1 (renaming of 0.26). Please convert your data to numeric values explicitly instead.
+  y_true = check_array(y_true, ensure_2d=False, dtype=dtype)
+/opt/hostedtoolcache/Python/3.10.4/x64/lib/python3.10/site-packages/sklearn/metrics/_regression.py:95: FutureWarning: Arrays of bytes/strings is being converted to decimal numbers if dtype=&#39;numeric&#39;. This behavior is deprecated in 0.24 and will be removed in 1.1 (renaming of 0.26). Please convert your data to numeric values explicitly instead.
+  y_true = check_array(y_true, ensure_2d=False, dtype=dtype)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="random-forest">
+<h2>Random Forest<a class="headerlink" href="#random-forest" title="Link permanente para este título">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+<span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">999</span><span class="p">,</span> <span class="n">max_depth</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Train the model on training data</span>
+<span class="n">rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">rfmse</span> <span class="o">=</span>  <span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+<span class="n">rfmae</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean Squared Error:&#39;</span><span class="p">,</span> <span class="n">rfmse</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean Absolute Error:&#39;</span><span class="p">,</span> <span class="n">rfmae</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean Squared Error Reduction ratio:&#39;</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">rfmse</span><span class="o">/</span><span class="n">treemse</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean Absolute Error Reduction ratio:&#39;</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">rfmae</span><span class="o">/</span><span class="n">treemae</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean Squared Error: 14.33927430037819
+Mean Absolute Error: 2.77559623000172 
+
+Mean Squared Error Reduction ratio: 0.4187550927628564
+Mean Absolute Error Reduction ratio: 0.25755752352460026
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.10.4/x64/lib/python3.10/site-packages/sklearn/metrics/_regression.py:95: FutureWarning: Arrays of bytes/strings is being converted to decimal numbers if dtype=&#39;numeric&#39;. This behavior is deprecated in 0.24 and will be removed in 1.1 (renaming of 0.26). Please convert your data to numeric values explicitly instead.
+  y_true = check_array(y_true, ensure_2d=False, dtype=dtype)
+/opt/hostedtoolcache/Python/3.10.4/x64/lib/python3.10/site-packages/sklearn/metrics/_regression.py:95: FutureWarning: Arrays of bytes/strings is being converted to decimal numbers if dtype=&#39;numeric&#39;. This behavior is deprecated in 0.24 and will be removed in 1.1 (renaming of 0.26). Please convert your data to numeric values explicitly instead.
+  y_true = check_array(y_true, ensure_2d=False, dtype=dtype)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<span id="document-src/glossario"></span><div class="tex2jax_ignore mathjax_ignore section" id="glossario">
+<h2>Glossário<a class="headerlink" href="#glossario" title="Link permanente para este título">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Bagging (Bootstrap Aggregating)</strong>: reamostragem com reposição usada para treinamento.</p></li>
+<li><p><strong>Nodes (Nós)</strong></p>
+<ul>
+<li><p><strong>Root Node</strong>: raíz, o nó inicial de cada árvore.</p></li>
+<li><p><strong>Internal Nodes</strong>: nós que direcionam o fluxo para outros nós internos ou para uma folha.</p></li>
+<li><p><strong>Leaf Nodes</strong>: folhas da árvore com a resposta estimada.</p></li>
+</ul>
+</li>
+<li><p><strong>OOB (Out-of-Bag)</strong>: observação não usada no bagging que pode ser usada como validação.</p></li>
+</ul>
+</div>
 </div>
 </div>
 
@@ -250,13 +2078,6 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="src/arvores_de_decisao.html" title="próximo page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">próximo</p>
-        <p class="prev-next-title">Árvores de Decisão</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             
         </div>
